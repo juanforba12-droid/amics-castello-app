@@ -533,11 +533,9 @@ function FieldMarkings({ type }) {
       <circle cx="50" cy="27.5" r="9" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       <circle cx="50" cy="27.5" r="0.5" fill="white" opacity="0.9"/>
       {/* Zona pintada izquierda FIBA: 4.9m ancho x 5.8m largo */}
-      <rect x="1" y="18.5" width="20.7" height="16.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
-      {/* Semicírculo TL radio 1.8m hacia dentro */}
-      <path d="M21.7 18.5 A6.43 6.43 0 0 1 21.7 35" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      {/* Semicírculo TL punteado hacia fuera */}
-      <path d="M21.7 18.5 A6.43 6.43 0 0 0 21.7 35" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
+      <rect x="1" y="20" width="12" height="13.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
+      <path d="M13 20 A6.43 6.43 0 0 1 13 33.5" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M13 20 A6.43 6.43 0 0 0 13 33.5" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
       {/* Tablero izquierdo */}
       <line x1="1" y1="23.1" x2="1" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
       {/* Poste aro izquierdo */}
@@ -551,11 +549,9 @@ function FieldMarkings({ type }) {
       <line x1="1" y1="49" x2="5.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <path d="M5.5 4.5 A24.1 24.1 0 0 1 5.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       {/* Zona pintada derecha FIBA */}
-      <rect x="78.3" y="18.5" width="20.7" height="16.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
-      {/* Semicírculo TL derecha hacia dentro */}
-      <path d="M78.3 18.5 A6.43 6.43 0 0 0 78.3 35" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      {/* Semicírculo TL derecha punteado */}
-      <path d="M78.3 18.5 A6.43 6.43 0 0 1 78.3 35" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
+      <rect x="87" y="20" width="12" height="13.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
+      <path d="M87 20 A6.43 6.43 0 0 0 87 33.5" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M87 20 A6.43 6.43 0 0 1 87 33.5" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
       {/* Tablero derecho */}
       <line x1="99" y1="23.1" x2="99" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
       {/* Poste aro derecho */}
