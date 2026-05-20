@@ -50,3 +50,4 @@ npm run dev
 ## Despliegue Vercel
 
 Sube a GitHub → importa en Vercel → despliega.
+
