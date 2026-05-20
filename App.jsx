@@ -1815,10 +1815,10 @@ function PartidosSection({ team, data, onSave, isCoord }) {
               </div>
               <div className="flex gap-1 ml-3" onClick={e => e.stopPropagation()}>
                 <Btn small variant="primary" onClick={() => openDetail(m)}>⭐ Valorar</Btn>
-                <Btn small variant="secondary" onClick={() => setAttMatch(m)}>📋</Btn>
-                {(data.coaches || []).length > 0 && isCoord && <Btn small variant="secondary" onClick={() => setCoachAttMatch(m)}>🧑‍🏫</Btn>}
-                <Btn small variant="secondary" onClick={() => openForm(m)}>✏️</Btn>
-                <Btn small variant="danger" onClick={() => delMatch(m.id)}>🗑️</Btn>
+                <Btn small variant="secondary" onClick={() => setAttMatch(m)}>📋 Asistencia</Btn>
+                {(data.coaches || []).length > 0 && isCoord && <Btn small variant="secondary" onClick={() => setCoachAttMatch(m)}>🧑‍🏫 Entrenadores</Btn>}
+                <Btn small variant="secondary" onClick={() => openForm(m)}>✏️ Editar</Btn>
+                <Btn small variant="danger" onClick={() => delMatch(m.id)}>🗑️ Borrar</Btn>
               </div>
             </div>
           </Card>
