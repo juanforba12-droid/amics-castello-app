@@ -1167,9 +1167,9 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
             if(item.type==="aro")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#22d3ee" stroke-width="2.5"/>`;
             if(item.type==="aro_rojo")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#dc2626" stroke-width="2.5"/>`;
             if(item.type==="aro_amarillo")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#eab308" stroke-width="2.5"/>`;
-            if(item.type==="balon")return `<circle cx="${cx}" cy="${cy}" r="9" fill="white" opacity="0.9"/>`;
+            if(item.type==="balon")return `<circle cx="${cx}" cy="${cy}" r="12" fill="white" opacity="0.9"/><circle cx="${cx}" cy="${cy}" r="12" fill="none" stroke="#aaa" stroke-width="1"/><line x1="${cx-12}" y1="${cy}" x2="${cx+12}" y2="${cy}" stroke="#aaa" stroke-width="1"/><line x1="${cx}" y1="${cy-12}" x2="${cx}" y2="${cy+12}" stroke="#aaa" stroke-width="1"/>`;
             if(item.type==="escalera")return `<rect x="${cx-10}" y="${cy-13}" width="20" height="26" fill="none" stroke="#f59e0b" stroke-width="2"/><line x1="${cx-10}" y1="${cy-5}" x2="${cx+10}" y2="${cy-5}" stroke="#f59e0b" stroke-width="1.5"/><line x1="${cx-10}" y1="${cy+3}" x2="${cx+10}" y2="${cy+3}" stroke="#f59e0b" stroke-width="1.5"/>`;
-            if(item.type==="canasta")return `<rect x="${cx-16}" y="${cy-5}" width="16" height="8" fill="none" stroke="white" stroke-width="1.5"/><line x1="${cx}" y1="${cy-1}" x2="${cx+10}" y2="${cy-1}" stroke="white" stroke-width="1.5"/><circle cx="${cx+15}" cy="${cy-1}" r="7" fill="none" stroke="white" stroke-width="1.8"/><line x1="${cx+15}" y1="${cy+6}" x2="${cx+15}" y2="${cy+16}" stroke="white" stroke-width="1.5"/><line x1="${cx+8}" y1="${cy+16}" x2="${cx+22}" y2="${cy+16}" stroke="white" stroke-width="1.5"/>`;
+            if(item.type==="canasta")return `<rect x="${cx-20}" y="${cy-7}" width="20" height="10" fill="none" stroke="white" stroke-width="1.8"/><line x1="${cx}" y1="${cy-2}" x2="${cx+12}" y2="${cy-2}" stroke="white" stroke-width="1.8"/><circle cx="${cx+19}" cy="${cy-2}" r="9" fill="none" stroke="white" stroke-width="2"/><line x1="${cx+19}" y1="${cy+7}" x2="${cx+19}" y2="${cy+20}" stroke="white" stroke-width="1.8"/><line x1="${cx+10}" y1="${cy+20}" x2="${cx+28}" y2="${cy+20}" stroke="white" stroke-width="1.8"/>`;
             if(item.type==="pesa")return `<circle cx="${cx-8}" cy="${cy}" r="5" fill="none" stroke="#a78bfa" stroke-width="2"/><circle cx="${cx+8}" cy="${cy}" r="5" fill="none" stroke="#a78bfa" stroke-width="2"/><line x1="${cx-8}" y1="${cy}" x2="${cx+8}" y2="${cy}" stroke="#a78bfa" stroke-width="3"/>`;
             return `<circle cx="${cx}" cy="${cy}" r="8" fill="#888"/>`;
           }).join("");
@@ -1325,11 +1325,11 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
                       </div>
                       {pct !== null && (
                         <div className="flex items-center gap-2">
-                          <span className="text-xs text-zinc-500">0 min</span>
+                          <span className="text-xs text-zinc-500">{totalMin} min</span>
                           <div className="flex-1 bg-zinc-800 rounded-full h-2">
                             <div className={`${pctColor} h-2 rounded-full transition-all`} style={{width: Math.min(100,pct)+"%"}}/>
                           </div>
-                          <span className="text-xs text-zinc-500">{s.duracion} min</span>
+                          <span className="text-xs text-zinc-500">{sess.duracion} min</span>
                         </div>
                       )}
                     </div>
