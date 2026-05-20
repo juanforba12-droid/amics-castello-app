@@ -1152,7 +1152,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
             <path d="M462 138 A12 12 0 0 0 462 162" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
             <line x1="490" y1="55" x2="462" y2="55" stroke="white" stroke-width="1.5" opacity="0.9"/>
             <line x1="490" y1="245" x2="462" y2="245" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M462 55 A96 96 0 0 1 462 245" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>`;
+            <path d="M462 55 A96 96 0 0 0 462 245" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>`;
           const PHEX = { red:"#dc2626", yellow:"#eab308", blue:"#2563eb", green:"#16a34a" };
           const drawingsSVG = (task.pizarra||[]).filter(i=>i&&i.type==="drawing"&&Array.isArray(i.path)&&i.path.length>0).map(item=>{
             const pts = item.path.map(p=>`${(p.x/100)*W},${(p.y/100)*H}`).join(" ");
