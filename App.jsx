@@ -373,14 +373,27 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
       </div>
       {showAllReports && (
         <Card className="border-zinc-700">
-          <h3 className="text-sm font-bold text-zinc-300 mb-3">📋 Todos los informes</h3>
+          <div className="flex justify-between items-center mb-3">
+            <h3 className="text-sm font-bold text-zinc-300">📋 Todos los informes</h3>
+            <Btn small variant="secondary" onClick={() => setShowAllReports(false)}>← Volver a plantilla</Btn>
+          </div>
           {(data.players || []).every(p => (p.reports || []).length === 0) && <p className="text-zinc-500 text-sm">No hay informes todavía.</p>}
-          {(data.players || []).flatMap(p => (p.reports || []).map(r => ({ ...r, playerName: p.name }))).sort((a,b) => (b.fecha||"").localeCompare(a.fecha||"")).map(r => (
+          {(data.players || []).flatMap(p => (p.reports || []).map(r => ({ ...r, playerName: p.name, playerId: p.id }))).sort((a,b) => (b.fecha||"").localeCompare(a.fecha||"")).map(r => (
             <div key={r.id} className="border-b border-zinc-800 py-3 last:border-0">
-              <span className="text-green-400 text-xs font-bold uppercase">{r.playerName}</span>
-              {r.title && <p className="text-white font-semibold text-sm mt-0.5">{r.title}</p>}
-              <p className="text-zinc-400 text-xs">{r.fecha}</p>
-              {r.text && <p className="text-zinc-300 text-sm mt-1 whitespace-pre-wrap">{r.text}</p>}
+              <div className="flex justify-between items-start">
+                <div>
+                  <span className="text-green-400 text-xs font-bold uppercase">{r.playerName}</span>
+                  {r.title && <p className="text-white font-semibold text-sm mt-0.5">{r.title}</p>}
+                  <p className="text-zinc-400 text-xs">{r.fecha}</p>
+                  {r.text && <p className="text-zinc-300 text-sm mt-1 whitespace-pre-wrap">{r.text}</p>}
+                </div>
+                <Btn small variant="danger" onClick={() => {
+                  const players = (data.players || []).map(p =>
+                    p.id !== r.playerId ? p : { ...p, reports: (p.reports || []).filter(x => x.id !== r.id) }
+                  );
+                  onSave({ ...data, players });
+                }}>🗑️</Btn>
+              </div>
             </div>
           ))}
         </Card>
