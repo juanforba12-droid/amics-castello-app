@@ -518,9 +518,9 @@ function FieldMarkings({ type }) {
       {/* Aro */}
       <circle cx="7.5" cy="27.5" r="2.2" fill="none" stroke="white" strokeWidth="0.7" opacity="1"/>
       {/* Línea 3 puntos */}
-      <line x1="1" y1="4.5" x2="10" y2="4.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <line x1="1" y1="50.5" x2="10" y2="50.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <path d="M10 4.5 A26 26 0 0 1 10 50.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <line x1="1" y1="9" x2="10" y2="9" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <line x1="1" y1="46" x2="10" y2="46" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M10 9 A16 16 0 0 1 10 46" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       {/* Semicírculo central lado abierto */}
       <path d="M54 18.5 A9 9 0 0 1 54 36.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.7"/>
     </svg>
