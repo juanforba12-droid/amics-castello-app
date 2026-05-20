@@ -547,9 +547,9 @@ function FieldMarkings({ type }) {
       {/* Arco sin carga 1.25m punteado */}
       <path d="M5.6 25.3 A1.6 1.6 0 0 1 5.6 28.2" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
       {/* 3 puntos izquierda: rectas cortas + arco grande */}
-      <line x1="1" y1="4.5" x2="5.5" y2="4.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <line x1="1" y1="49" x2="5.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M5.5 4.5 A24.1 24.1 0 0 1 5.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <line x1="1" y1="10.5" x2="5.5" y2="10.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <line x1="1" y1="43" x2="5.5" y2="43" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M5.5 10.5 A24.1 24.1 0 0 1 5.5 43" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       {/* Zona pintada derecha FIBA */}
       <rect x="78.3" y="18.5" width="20.7" height="16.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
       {/* Semicírculo TL derecha hacia dentro */}
@@ -565,9 +565,9 @@ function FieldMarkings({ type }) {
       {/* Arco sin carga derecho punteado */}
       <path d="M94.4 25.3 A1.6 1.6 0 0 0 94.4 28.2" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
       {/* 3 puntos derecha */}
-      <line x1="99" y1="4.5" x2="94.5" y2="4.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <line x1="99" y1="49" x2="94.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M94.5 4.5 A24.1 24.1 0 0 0 94.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <line x1="99" y1="10.5" x2="94.5" y2="10.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <line x1="99" y1="43" x2="94.5" y2="43" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M94.5 10.5 A24.1 24.1 0 0 0 94.5 43" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
     </svg>
   );
 }
