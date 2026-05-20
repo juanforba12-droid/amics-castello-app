@@ -1129,7 +1129,9 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
         ${task.desc ? `<div style="padding:12px 16px;font-size:13px;color:#333;white-space:pre-wrap;border-bottom:1px solid #eee">${task.desc}</div>` : ""}
         ${(task.pizarra?.length > 0) ? (() => {
           const W = 500, H = 300;
-          const bg = `<rect width="${W}" height="${H}" fill="#b05a14"/>
+          const isHalf = task.fieldType === "half";
+          const isBlank = task.fieldType === "blank";
+          const fullLines = `
             <rect x="10" y="10" width="480" height="280" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
             <line x1="250" y1="10" x2="250" y2="290" stroke="white" stroke-width="1.5" opacity="0.8"/>
             <circle cx="250" cy="150" r="45" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
@@ -1152,7 +1154,23 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
             <path d="M462 138 A12 12 0 0 0 462 162" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
             <line x1="490" y1="20" x2="462" y2="20" stroke="white" stroke-width="1.5" opacity="0.9"/>
             <line x1="490" y1="280" x2="462" y2="280" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M462 20 A96 96 0 0 0 462 280" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>`;
+            <path d="M462 20 A96 96 0 0 0 462 280" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>
+          `;
+          const halfLines = `
+            <rect x="10" y="10" width="480" height="280" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+            <rect x="10" y="101" width="104" height="98" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M114 101 A36 36 0 0 1 114 199" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <path d="M114 101 A36 36 0 0 0 114 199" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6"/>
+            <line x1="10" y1="125" x2="10" y2="175" stroke="white" stroke-width="5" opacity="1"/>
+            <line x1="10" y1="150" x2="38" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="38" cy="150" r="9" fill="none" stroke="white" stroke-width="2" opacity="1"/>
+            <path d="M38 138 A12 12 0 0 1 38 162" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+            <line x1="10" y1="20" x2="38" y2="20" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <line x1="10" y1="280" x2="38" y2="280" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M38 20 A96 96 0 0 1 38 280" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M490 130 A20 20 0 0 1 490 170" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+          `;
+          const bg = `<rect width="${W}" height="${H}" fill="#b05a14"/>${isBlank ? "" : isHalf ? halfLines : fullLines}`;
           const PHEX = { red:"#dc2626", yellow:"#eab308", blue:"#2563eb", green:"#16a34a" };
           const drawingsSVG = (task.pizarra||[]).filter(i=>i&&i.type==="drawing"&&Array.isArray(i.path)&&i.path.length>0).map(item=>{
             const pts = item.path.map(p=>`${(p.x/100)*W},${(p.y/100)*H}`).join(" ");
