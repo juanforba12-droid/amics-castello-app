@@ -1225,15 +1225,21 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
                 {(s.tasks || []).length > 0 && (() => {
                   const totalMin = (s.tasks||[]).reduce((a,t)=>a+(t.minutos||0),0);
                   const pct = s.duracion ? Math.min(100, Math.round((totalMin/s.duracion)*100)) : null;
+                  const pctColor = pct >= 100 ? "bg-green-500" : pct >= 75 ? "bg-yellow-500" : "bg-blue-500";
                   return (
-                    <div className="mt-1">
-                      <p className="text-xs text-green-400">🗂 {s.tasks.length} ejercicio{s.tasks.length !== 1 ? "s" : ""} · ⏱ {totalMin} min</p>
+                    <div className="mt-2 space-y-1">
+                      <div className="flex gap-2 flex-wrap">
+                        <span className="text-xs bg-zinc-800 text-zinc-300 px-2 py-0.5 rounded-full">🗂 {s.tasks.length} ejercicio{s.tasks.length !== 1 ? "s" : ""} · {totalMin} min</span>
+                        {pct !== null && <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${pct>=100?"bg-green-900 text-green-300":pct>=75?"bg-yellow-900 text-yellow-300":"bg-blue-900 text-blue-300"}`}>{pct}%</span>}
+                        {pct >= 100 && <span className="text-xs text-green-400">✅ Sesión completa</span>}
+                      </div>
                       {pct !== null && (
-                        <div className="flex items-center gap-2 mt-1">
-                          <div className="flex-1 bg-zinc-800 rounded-full h-1.5">
-                            <div className="bg-green-500 h-1.5 rounded-full" style={{width: pct+"%"}}/>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-zinc-500">0 min</span>
+                          <div className="flex-1 bg-zinc-800 rounded-full h-2">
+                            <div className={`${pctColor} h-2 rounded-full transition-all`} style={{width: Math.min(100,pct)+"%"}}/>
                           </div>
-                          <span className="text-xs text-zinc-400">{pct}%</span>
+                          <span className="text-xs text-zinc-500">{s.duracion} min</span>
                         </div>
                       )}
                     </div>
