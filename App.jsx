@@ -1856,6 +1856,36 @@ function PartidosSection({ team, data, onSave, isCoord }) {
           </div>
         </div>
       )}
+      {coachAttMatch && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={() => setCoachAttMatch(null)}>
+          <div className="bg-zinc-900 border border-zinc-700 rounded-xl w-full max-w-lg max-h-[80vh] overflow-auto" onClick={e => e.stopPropagation()}>
+            <div className="p-5 border-b border-zinc-800 flex justify-between items-center">
+              <div><h3 className="text-white font-bold text-lg">🧑‍🏫 Entrenadores</h3><p className="text-zinc-400 text-sm">{coachAttMatch.fecha} — vs {coachAttMatch.rival}</p></div>
+              <Btn small variant="secondary" onClick={() => setCoachAttMatch(null)}>✕</Btn>
+            </div>
+            <div className="p-5 space-y-2">
+              {(data.coaches || []).length === 0 && <p className="text-zinc-500 text-sm">No hay entrenadores registrados.</p>}
+              {(data.coaches || []).map(c => {
+                const sessionId = `m_${coachAttMatch.id}`;
+                const rec = (data.coachAttendance || []).find(a => a.sessionId === sessionId && a.coachId === c.id);
+                return (
+                  <div key={c.id} className="flex flex-wrap items-center gap-2 bg-zinc-800 rounded-lg px-4 py-3">
+                    <span className="text-white text-sm font-semibold flex-1">{c.name}</span>
+                    <div className="flex gap-1">
+                      {coachAttStatusOpts.map(opt => (
+                        <button key={opt.val} onClick={() => setCoachAttRecord(sessionId, c.id, opt.val, coachAttMatch.fecha)}
+                          className={`text-xs px-2 py-1 rounded border transition-all ${coachAttBtnClass(rec?.status, opt.val, opt.color)}`}
+                        >{opt.label}</button>
+                      ))}
+                      {rec && <Btn small variant="danger" onClick={() => delCoachAttRecord(sessionId, c.id)}>✕</Btn>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
