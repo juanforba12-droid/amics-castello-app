@@ -498,24 +498,31 @@ const FIELD_TYPES = [
 function FieldMarkings({ type }) {
   if (type === "blank") return null;
   if (type === "half") return (
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 65" preserveAspectRatio="none">
-      <rect x="2" y="2" width="96" height="61" fill="none" stroke="white" strokeWidth="0.5" opacity="0.7"/>
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 55 55" preserveAspectRatio="none">
+      {/* Fondo */}
+      <rect x="0" y="0" width="55" height="55" fill="#b05a14"/>
+      {/* Borde */}
+      <rect x="1" y="1" width="53" height="53" fill="none" stroke="white" strokeWidth="0.7" opacity="0.95"/>
+      {/* Línea de fondo (lado del aro) */}
+      <line x1="1" y1="1" x2="1" y2="54" stroke="white" strokeWidth="1" opacity="1"/>
       {/* Zona pintada */}
-      <rect x="2" y="18" width="19" height="29" fill="none" stroke="white" strokeWidth="0.5" opacity="0.7"/>
-      {/* Línea de tiros libres */}
-      <line x1="21" y1="22" x2="21" y2="43" stroke="white" strokeWidth="0.5" opacity="0.7"/>
-      {/* Semicírculo tiros libres */}
-      <path d="M21 22 A10 10 0 0 1 21 43" fill="none" stroke="white" strokeWidth="0.5" opacity="0.7"/>
+      <rect x="1" y="14" width="19" height="27" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.6" opacity="0.95"/>
+      {/* Semicírculo tiros libres hacia dentro */}
+      <path d="M20 14 A13.5 13.5 0 0 1 20 41" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      {/* Semicírculo tiros libres hacia fuera punteado */}
+      <path d="M20 14 A13.5 13.5 0 0 0 20 41" fill="none" stroke="white" strokeWidth="0.6" strokeDasharray="1.5 1.5" opacity="0.7"/>
       {/* Tablero */}
-      <rect x="0" y="27.5" width="4" height="10" fill="none" stroke="white" strokeWidth="0.8" opacity="0.8"/>
+      <rect x="0" y="23.5" width="2.5" height="8" fill="none" stroke="white" strokeWidth="0.9" opacity="1"/>
+      {/* Poste */}
+      <line x1="2.5" y1="27.5" x2="5.5" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.9"/>
       {/* Aro */}
-      <circle cx="6" cy="32.5" r="2.5" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9"/>
-      {/* Línea de 3 puntos */}
-      <path d="M2 14 A22 22 0 0 1 2 51" fill="none" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <line x1="2" y1="14" x2="9" y2="14" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <line x1="2" y1="51" x2="9" y2="51" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      {/* Semicírculo central */}
-      <path d="M98 27 A6 6 0 0 1 98 38" fill="none" stroke="white" strokeWidth="0.5" opacity="0.5"/>
+      <circle cx="7.5" cy="27.5" r="2.2" fill="none" stroke="white" strokeWidth="0.7" opacity="1"/>
+      {/* Línea 3 puntos */}
+      <line x1="1" y1="4.5" x2="10" y2="4.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <line x1="1" y1="50.5" x2="10" y2="50.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M10 4.5 A26 26 0 0 1 10 50.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      {/* Semicírculo central lado abierto */}
+      <path d="M54 18.5 A9 9 0 0 1 54 36.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.7"/>
     </svg>
   );
   return (
