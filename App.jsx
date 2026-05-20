@@ -1125,7 +1125,25 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
           <span style="background:#15803d;color:white;padding:3px 12px;border-radius:12px;font-size:12px">⏱ ${task.minutos} min</span>
         </div>
         ${task.desc ? `<div style="padding:12px 16px;font-size:13px;color:#333;white-space:pre-wrap;border-bottom:1px solid #eee">${task.desc}</div>` : ""}
-        ${!(task.pizarra?.length > 0) ? `<div style="padding:10px 16px;font-size:12px;color:#999;font-style:italic">Sin pizarra</div>` : ""}
+        ${(task.pizarra?.length > 0) ? (() => {
+          const W = 500, H = 300;
+          const bg = `<rect width="${W}" height="${H}" fill="#b05a14"/>`;
+          const PHEX = { red:"#dc2626", yellow:"#eab308", blue:"#2563eb", green:"#16a34a" };
+          const drawingsSVG = (task.pizarra||[]).filter(i=>i&&i.type==="drawing"&&Array.isArray(i.path)&&i.path.length>0).map(item=>{
+            const pts = item.path.map(p=>`${(p.x/100)*W},${(p.y/100)*H}`).join(" ");
+            return `<polyline points="${pts}" fill="none" stroke="${item.color||"#fff"}" stroke-width="${item.size||2}" stroke-linecap="round" stroke-linejoin="round"/>`;
+          }).join("");
+          const itemsSVG = (task.pizarra||[]).filter(i=>i&&i.type&&i.type!=="drawing").map(item=>{
+            if(item.type==="flecha"){const fx1=(item.x||0)/100*W,fy1=(item.y||0)/100*H,fx2=(item.x2||0)/100*W,fy2=(item.y2||0)/100*H,aid=`a${Math.round(fx1)}${Math.round(fy1)}`;return `<defs><marker id="${aid}" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="white"/></marker></defs><line x1="${fx1}" y1="${fy1}" x2="${fx2}" y2="${fy2}" stroke="white" stroke-width="2.5" marker-end="url(#${aid})"/>`;}
+            const cx=(item.x/100)*W,cy=(item.y/100)*H;
+            if(item.type.startsWith("player_")){const c=item.type.replace("player_","");return `<circle cx="${cx}" cy="${cy}" r="14" fill="${PHEX[c]||"#dc2626"}" stroke="white" stroke-width="1.5"/><text x="${cx}" y="${cy+4}" text-anchor="middle" fill="white" font-size="11" font-weight="bold">${item.num??""}</text>`;}
+            if(item.type==="cono")return `<polygon points="${cx},${cy-7} ${cx-4},${cy+3} ${cx+4},${cy+3}" fill="#f97316"/>`;
+            if(item.type==="aro")return `<circle cx="${cx}" cy="${cy}" r="6" fill="none" stroke="#22d3ee" stroke-width="2"/>`;
+            if(item.type==="balon")return `<circle cx="${cx}" cy="${cy}" r="6" fill="white" opacity="0.9"/>`;
+            return `<circle cx="${cx}" cy="${cy}" r="6" fill="#888"/>`;
+          }).join("");
+          return `<div style="padding:12px 16px;background:#f0f0f0"><svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" style="border-radius:8px;display:block;margin:0 auto">${bg}${drawingsSVG}${itemsSVG}</svg></div>`;
+        })() : `<div style="padding:10px 16px;font-size:12px;color:#999;font-style:italic">Sin pizarra</div>`}
       </div>
     `).join("");
 
