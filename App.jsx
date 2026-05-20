@@ -180,7 +180,9 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
   const statusColor = { titular: "green", suplente: "blue", no_conv: "zinc" };
 
   const openNotes = (p) => {
-    setNotesPlayer(p);
+    // Leer siempre el jugador fresco de data para tener sus reports actualizados
+    const freshPlayer = (data.players || []).find(x => x.id === p.id) || p;
+    setNotesPlayer(freshPlayer);
     setReportTitle("");
     setReportText("");
     setReportDate(new Date().toISOString().split("T")[0]);
