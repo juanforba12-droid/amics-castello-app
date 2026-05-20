@@ -1219,11 +1219,27 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
                   {s.lugar && <span className="text-zinc-400 text-sm">📍 {s.lugar}</span>}
                 </div>
                 {s.desc && <p className="text-zinc-500 text-sm truncate max-w-xs">{s.desc}</p>}
-                {(s.tasks || []).length > 0 && <p className="text-xs text-green-400 mt-1">🗂 {s.tasks.length} ejercicio{s.tasks.length !== 1 ? "s" : ""}</p>}
+                {(s.tasks || []).length > 0 && (() => {
+                  const totalMin = (s.tasks||[]).reduce((a,t)=>a+(t.minutos||0),0);
+                  const pct = s.duracion ? Math.min(100, Math.round((totalMin/s.duracion)*100)) : null;
+                  return (
+                    <div className="mt-1">
+                      <p className="text-xs text-green-400">🗂 {s.tasks.length} ejercicio{s.tasks.length !== 1 ? "s" : ""} · ⏱ {totalMin} min</p>
+                      {pct !== null && (
+                        <div className="flex items-center gap-2 mt-1">
+                          <div className="flex-1 bg-zinc-800 rounded-full h-1.5">
+                            <div className="bg-green-500 h-1.5 rounded-full" style={{width: pct+"%"}}/>
+                          </div>
+                          <span className="text-xs text-zinc-400">{pct}%</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
               <div className="flex gap-1 ml-3" onClick={e => e.stopPropagation()}>
                 <Btn small variant="primary" onClick={() => setDetailSession(s)}>📋 Ver sesión</Btn>
-                <Btn small variant="secondary" onClick={() => printTraining(s)}>🖨️ PDF</Btn>
+                <Btn small variant="secondary" onClick={() => { const t = (data.trainings||[]).find(x=>x.id===s.id)||s; printTraining(t); }}>🖨️ PDF</Btn>
                 <Btn small variant="secondary" onClick={() => setAttSession(s)}>👥 Jugadores</Btn>
                 {(data.coaches || []).length > 0 && isCoord && <Btn small variant="secondary" onClick={() => setCoachAttSession(s)}>🧑‍🏫</Btn>}
                 <Btn small variant="secondary" onClick={() => openForm(s)}>✏️</Btn>
