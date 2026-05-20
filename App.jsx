@@ -1116,6 +1116,46 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
   const [coachAttSession, setCoachAttSession] = useState(null);
   const [detailSession, setDetailSession] = useState(null);
 
+  const printTraining = (t) => {
+    const totalMin = (t.tasks || []).reduce((s, x) => s + (x.minutos || 0), 0);
+    const tasksHTML = (t.tasks || []).map((task, i) => `
+      <div style="page-break-inside:avoid;margin-bottom:24px;border:1px solid #ddd;border-radius:8px;overflow:hidden">
+        <div style="background:#166534;color:white;padding:10px 16px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-weight:700;font-size:15px">#${i + 1} — ${task.nombre}</span>
+          <span style="background:#15803d;color:white;padding:3px 12px;border-radius:12px;font-size:12px">⏱ ${task.minutos} min</span>
+        </div>
+        ${task.desc ? `<div style="padding:12px 16px;font-size:13px;color:#333;white-space:pre-wrap;border-bottom:1px solid #eee">${task.desc}</div>` : ""}
+        ${!(task.pizarra?.length > 0) ? `<div style="padding:10px 16px;font-size:12px;color:#999;font-style:italic">Sin pizarra</div>` : ""}
+      </div>
+    `).join("");
+
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8">
+    <title>Entrenamiento ${t.fecha}</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 32px; max-width: 820px; margin: 0 auto; color: #111; }
+      h1 { font-size: 22px; margin: 0 0 6px; }
+      .club { font-size: 13px; color: #888; margin-bottom: 4px; }
+      .meta { display:flex; gap:16px; font-size:13px; color:#555; margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid #16a34a; }
+      .section-title { font-size:16px; font-weight:700; color:#166534; margin-bottom:14px; padding-bottom:4px; border-bottom:1px solid #ddd; }
+      @media print { body { padding:16px; } }
+    </style></head><body>
+    <div class="club">Amics Castelló — ${team}</div>
+    <h1>🏀 Entrenamiento del ${t.fecha}${t.hora ? " · " + t.hora : ""}${t.lugar ? " · " + t.lugar : ""}</h1>
+    <div class="meta">
+      <span>🗂 ${(t.tasks || []).length} ejercicios</span>
+      <span>⏱ ${totalMin} min${t.duracion ? " / " + t.duracion + " min" : ""}</span>
+    </div>
+    ${t.desc ? `<div style="background:#f8f8f8;border-left:4px solid #16a34a;padding:12px 16px;margin-bottom:24px;font-size:13px">${t.desc}</div>` : ""}
+    <div class="section-title">Ejercicios</div>
+    ${(t.tasks || []).length > 0 ? tasksHTML : "<p style='color:#999;font-style:italic'>Sin ejercicios.</p>"}
+    </body></html>`;
+
+    const win = window.open("", "_blank");
+    win.document.write(html);
+    win.document.close();
+    win.onload = () => win.print();
+  };
+
   if (view === "form") return (
     <div className="space-y-4">
       <div className="flex items-center gap-3">
