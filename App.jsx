@@ -1208,7 +1208,8 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
                 {(s.tasks || []).length > 0 && <p className="text-xs text-green-400 mt-1">🗂 {s.tasks.length} ejercicio{s.tasks.length !== 1 ? "s" : ""}</p>}
               </div>
               <div className="flex gap-1 ml-3" onClick={e => e.stopPropagation()}>
-                <Btn small variant="primary" onClick={() => setDetailSession(s)}>📋 Ver</Btn>
+                <Btn small variant="primary" onClick={() => setDetailSession(s)}>📋 Ver sesión</Btn>
+                <Btn small variant="secondary" onClick={() => printTraining(s)}>🖨️ PDF</Btn>
                 <Btn small variant="secondary" onClick={() => setAttSession(s)}>👥 Jugadores</Btn>
                 {(data.coaches || []).length > 0 && isCoord && <Btn small variant="secondary" onClick={() => setCoachAttSession(s)}>🧑‍🏫</Btn>}
                 <Btn small variant="secondary" onClick={() => openForm(s)}>✏️</Btn>
