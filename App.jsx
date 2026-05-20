@@ -532,26 +532,42 @@ function FieldMarkings({ type }) {
       <line x1="50" y1="1" x2="50" y2="54" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       <circle cx="50" cy="27.5" r="9" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       <circle cx="50" cy="27.5" r="0.5" fill="white" opacity="0.9"/>
-      <rect x="1" y="14" width="19" height="27" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.6" opacity="0.95"/>
-      <path d="M20 14 A13.5 13.5 0 0 1 20 41" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <path d="M20 14 A13.5 13.5 0 0 0 20 41" fill="none" stroke="white" strokeWidth="0.6" strokeDasharray="1.5 1.5" opacity="0.7"/>
-      <rect x="0" y="23.5" width="2.5" height="8" fill="none" stroke="white" strokeWidth="0.9" opacity="1"/>
-      <line x1="2.5" y1="27.5" x2="5.5" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.9"/>
-      <circle cx="7.5" cy="27.5" r="2.2" fill="none" stroke="white" strokeWidth="0.7" opacity="1"/>
-      <path d="M7.5 25.3 A2.2 2.2 0 0 1 7.5 29.7" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.8 0.8" opacity="0.8"/>
-      <line x1="1" y1="4.5" x2="10" y2="4.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <line x1="1" y1="50.5" x2="10" y2="50.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <path d="M10 4.5 A26 26 0 0 1 10 50.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <rect x="80" y="14" width="19" height="27" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.6" opacity="0.95"/>
-      <path d="M80 14 A13.5 13.5 0 0 0 80 41" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <path d="M80 14 A13.5 13.5 0 0 1 80 41" fill="none" stroke="white" strokeWidth="0.6" strokeDasharray="1.5 1.5" opacity="0.7"/>
-      <rect x="97.5" y="23.5" width="2.5" height="8" fill="none" stroke="white" strokeWidth="0.9" opacity="1"/>
-      <line x1="97.5" y1="27.5" x2="94.5" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.9"/>
-      <circle cx="92.5" cy="27.5" r="2.2" fill="none" stroke="white" strokeWidth="0.7" opacity="1"/>
-      <path d="M92.5 25.3 A2.2 2.2 0 0 0 92.5 29.7" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.8 0.8" opacity="0.8"/>
-      <line x1="99" y1="4.5" x2="90" y2="4.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <line x1="99" y1="50.5" x2="90" y2="50.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <path d="M90 4.5 A26 26 0 0 0 90 50.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      {/* Zona pintada izquierda FIBA: 4.9m ancho x 5.8m largo */}
+      <rect x="1" y="18.5" width="20.7" height="16.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
+      {/* Semicírculo TL radio 1.8m hacia dentro */}
+      <path d="M21.7 18.5 A6.43 6.43 0 0 1 21.7 35" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      {/* Semicírculo TL punteado hacia fuera */}
+      <path d="M21.7 18.5 A6.43 6.43 0 0 0 21.7 35" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
+      {/* Tablero izquierdo */}
+      <line x1="1" y1="23.1" x2="1" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
+      {/* Poste aro izquierdo */}
+      <line x1="1" y1="26.75" x2="5.6" y2="26.75" stroke="white" strokeWidth="0.5" opacity="0.8"/>
+      {/* Aro izquierdo */}
+      <circle cx="5.6" cy="26.75" r="1.6" fill="none" stroke="white" strokeWidth="0.75" opacity="1"/>
+      {/* Arco sin carga 1.25m punteado */}
+      <path d="M5.6 25.3 A1.6 1.6 0 0 1 5.6 28.2" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
+      {/* 3 puntos izquierda: rectas cortas + arco grande */}
+      <line x1="1" y1="4.5" x2="5.5" y2="4.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <line x1="1" y1="49" x2="5.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M5.5 4.5 A24.1 24.1 0 0 1 5.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      {/* Zona pintada derecha FIBA */}
+      <rect x="78.3" y="18.5" width="20.7" height="16.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
+      {/* Semicírculo TL derecha hacia dentro */}
+      <path d="M78.3 18.5 A6.43 6.43 0 0 0 78.3 35" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      {/* Semicírculo TL derecha punteado */}
+      <path d="M78.3 18.5 A6.43 6.43 0 0 1 78.3 35" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
+      {/* Tablero derecho */}
+      <line x1="99" y1="23.1" x2="99" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
+      {/* Poste aro derecho */}
+      <line x1="99" y1="26.75" x2="94.4" y2="26.75" stroke="white" strokeWidth="0.5" opacity="0.8"/>
+      {/* Aro derecho */}
+      <circle cx="94.4" cy="26.75" r="1.6" fill="none" stroke="white" strokeWidth="0.75" opacity="1"/>
+      {/* Arco sin carga derecho punteado */}
+      <path d="M94.4 25.3 A1.6 1.6 0 0 0 94.4 28.2" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
+      {/* 3 puntos derecha */}
+      <line x1="99" y1="4.5" x2="94.5" y2="4.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <line x1="99" y1="49" x2="94.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M94.5 4.5 A24.1 24.1 0 0 0 94.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
     </svg>
   );
 }
