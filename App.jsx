@@ -520,7 +520,7 @@ function FieldMarkings({ type }) {
       {/* Línea 3 puntos */}
       <line x1="1" y1="6" x2="15" y2="6" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       <line x1="1" y1="49" x2="15" y2="49" stroke="white" strokeWidth="0.6" opacity="0.9"/>
-      <path d="M15 6 A24 24 0 0 1 15 49" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M15 6 A10 10 0 0 1 15 49" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       {/* Semicírculo central lado abierto */}
       <path d="M54 18.5 A9 9 0 0 1 54 36.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.7"/>
     </svg>
