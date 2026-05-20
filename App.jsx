@@ -1030,6 +1030,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
   const [hora, setHora] = useState("");
   const [lugar, setLugar] = useState("");
   const [desc, setDesc] = useState("");
+  const [duracion, setDuracion] = useState(90);
 
   const coachAttStatusOpts = [
     { val: "present", label: "Asistió", color: "green" },
@@ -1063,6 +1064,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
     setHora(s ? s.hora : "");
     setLugar(s ? s.lugar : "");
     setDesc(s ? s.desc : "");
+    setDuracion(s ? (s.duracion || 90) : 90);
     setView("form");
   };
 
@@ -1071,9 +1073,9 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
     const trainings = [...(data.trainings || [])];
     if (editing) {
       const idx = trainings.findIndex(t => t.id === editing.id);
-      trainings[idx] = { ...editing, fecha, hora, lugar, desc };
+      trainings[idx] = { ...editing, fecha, hora, lugar, desc, duracion };
     } else {
-      trainings.push({ id: Date.now(), fecha, hora, lugar, desc, tasks: [] });
+      trainings.push({ id: Date.now(), fecha, hora, lugar, desc, duracion, tasks: [] });
     }
     onSave({ ...data, trainings: trainings.sort((a, b) => b.fecha.localeCompare(a.fecha)) });
     setView("list");
@@ -1125,6 +1127,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
           <Input label="Fecha" type="date" value={fecha} onChange={e => setFecha(e.target.value)} />
           <Input label="Hora" type="time" value={hora} onChange={e => setHora(e.target.value)} />
           <Input label="Lugar" value={lugar} onChange={e => setLugar(e.target.value)} />
+          <Input label="Duración sesión (min)" type="number" value={duracion} onChange={e => setDuracion(Number(e.target.value))} />
         </div>
         <div className="mt-3">
           <Textarea label="Notas / Descripción" value={desc} onChange={e => setDesc(e.target.value)} />
