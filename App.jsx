@@ -547,7 +547,7 @@ function FieldMarkings({ type }) {
       {/* 3 puntos izquierda: rectas cortas + arco grande */}
       <line x1="1" y1="5.5" x2="5.6" y2="5.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <line x1="1" y1="48" x2="5.6" y2="48" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M5.6 5.5 A48.2 48.2 0 0 1 5.6 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M5.6 5.5 A48.2 48.2 0 1 1 5.6 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       {/* Zona pintada derecha FIBA */}
       <rect x="83.4" y="18.7" width="15.6" height="17.6" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
       <path d="M83.4 18.7 A6.43 6.43 0 0 0 83.4 36.3" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
@@ -563,7 +563,7 @@ function FieldMarkings({ type }) {
       {/* 3 puntos derecha */}
       <line x1="99" y1="5.5" x2="94.4" y2="5.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <line x1="99" y1="48" x2="94.4" y2="48" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M94.4 5.5 A48.2 48.2 0 0 0 94.4 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M94.4 5.5 A48.2 48.2 0 1 0 94.4 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
     </svg>
   );
 }
