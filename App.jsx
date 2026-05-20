@@ -1163,7 +1163,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
         {session.desc && <Card><p className="text-zinc-300 text-sm">{session.desc}</p></Card>}
         <div className="flex justify-between items-center">
           <p className="text-sm font-semibold text-zinc-300">Ejercicios de la sesión</p>
-          <Btn small onClick={() => setTaskEditor(null)}>+ Añadir ejercicio</Btn>
+          <Btn small onClick={() => setTaskEditor({})}>+ Añadir ejercicio</Btn>
         </div>
         {sessionTasks.length === 0 && <p className="text-zinc-500 text-sm">Sin ejercicios en esta sesión.</p>}
         {sessionTasks.map(t => {
