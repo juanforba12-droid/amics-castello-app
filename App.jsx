@@ -1127,7 +1127,30 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
         ${task.desc ? `<div style="padding:12px 16px;font-size:13px;color:#333;white-space:pre-wrap;border-bottom:1px solid #eee">${task.desc}</div>` : ""}
         ${(task.pizarra?.length > 0) ? (() => {
           const W = 500, H = 300;
-          const bg = `<rect width="${W}" height="${H}" fill="#b05a14"/>`;
+          const bg = `<rect width="${W}" height="${H}" fill="#b05a14"/>
+            <rect x="10" y="10" width="480" height="280" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+            <line x1="250" y1="10" x2="250" y2="290" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="250" cy="150" r="45" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <rect x="10" y="70" width="104" height="160" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M114 70 A64 64 0 0 1 114 230" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <path d="M114 70 A64 64 0 0 0 114 230" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.6"/>
+            <line x1="10" y1="115" x2="10" y2="185" stroke="white" stroke-width="5" opacity="1"/>
+            <line x1="10" y1="150" x2="38" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="38" cy="150" r="11" fill="none" stroke="white" stroke-width="2" opacity="1"/>
+            <path d="M38 125 A120 120 0 0 0 38 175" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.7"/>
+            <line x1="10" y1="27" x2="38" y2="27" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <line x1="10" y1="273" x2="38" y2="273" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M38 27 A120 120 0 0 1 38 273" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <rect x="386" y="70" width="104" height="160" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M386 70 A64 64 0 0 0 386 230" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <path d="M386 70 A64 64 0 0 1 386 230" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.6"/>
+            <line x1="490" y1="115" x2="490" y2="185" stroke="white" stroke-width="5" opacity="1"/>
+            <line x1="490" y1="150" x2="462" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="462" cy="150" r="11" fill="none" stroke="white" stroke-width="2" opacity="1"/>
+            <path d="M462 125 A120 120 0 0 1 462 175" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.7"/>
+            <line x1="490" y1="27" x2="462" y2="27" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <line x1="490" y1="273" x2="462" y2="273" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M462 27 A120 120 0 0 0 462 273" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>`;
           const PHEX = { red:"#dc2626", yellow:"#eab308", blue:"#2563eb", green:"#16a34a" };
           const drawingsSVG = (task.pizarra||[]).filter(i=>i&&i.type==="drawing"&&Array.isArray(i.path)&&i.path.length>0).map(item=>{
             const pts = item.path.map(p=>`${(p.x/100)*W},${(p.y/100)*H}`).join(" ");
@@ -1137,10 +1160,15 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
             if(item.type==="flecha"){const fx1=(item.x||0)/100*W,fy1=(item.y||0)/100*H,fx2=(item.x2||0)/100*W,fy2=(item.y2||0)/100*H,aid=`a${Math.round(fx1)}${Math.round(fy1)}`;return `<defs><marker id="${aid}" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="white"/></marker></defs><line x1="${fx1}" y1="${fy1}" x2="${fx2}" y2="${fy2}" stroke="white" stroke-width="2.5" marker-end="url(#${aid})"/>`;}
             const cx=(item.x/100)*W,cy=(item.y/100)*H;
             if(item.type.startsWith("player_")){const c=item.type.replace("player_","");return `<circle cx="${cx}" cy="${cy}" r="14" fill="${PHEX[c]||"#dc2626"}" stroke="white" stroke-width="1.5"/><text x="${cx}" y="${cy+4}" text-anchor="middle" fill="white" font-size="11" font-weight="bold">${item.num??""}</text>`;}
-            if(item.type==="cono")return `<polygon points="${cx},${cy-7} ${cx-4},${cy+3} ${cx+4},${cy+3}" fill="#f97316"/>`;
-            if(item.type==="aro")return `<circle cx="${cx}" cy="${cy}" r="6" fill="none" stroke="#22d3ee" stroke-width="2"/>`;
-            if(item.type==="balon")return `<circle cx="${cx}" cy="${cy}" r="6" fill="white" opacity="0.9"/>`;
-            return `<circle cx="${cx}" cy="${cy}" r="6" fill="#888"/>`;
+            if(item.type==="cono")return `<polygon points="${cx},${cy-10} ${cx-6},${cy+6} ${cx+6},${cy+6}" fill="#f97316"/>`;
+            if(item.type==="cono_azul")return `<polygon points="${cx},${cy-10} ${cx-6},${cy+6} ${cx+6},${cy+6}" fill="#2563eb"/>`;
+            if(item.type==="aro")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#22d3ee" stroke-width="2.5"/>`;
+            if(item.type==="aro_rojo")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#dc2626" stroke-width="2.5"/>`;
+            if(item.type==="aro_amarillo")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#eab308" stroke-width="2.5"/>`;
+            if(item.type==="balon")return `<circle cx="${cx}" cy="${cy}" r="9" fill="white" opacity="0.9"/>`;
+            if(item.type==="escalera")return `<rect x="${cx-10}" y="${cy-13}" width="20" height="26" fill="none" stroke="#f59e0b" stroke-width="2"/><line x1="${cx-10}" y1="${cy-5}" x2="${cx+10}" y2="${cy-5}" stroke="#f59e0b" stroke-width="1.5"/><line x1="${cx-10}" y1="${cy+3}" x2="${cx+10}" y2="${cy+3}" stroke="#f59e0b" stroke-width="1.5"/>`;
+            if(item.type==="pesa")return `<circle cx="${cx-8}" cy="${cy}" r="5" fill="none" stroke="#a78bfa" stroke-width="2"/><circle cx="${cx+8}" cy="${cy}" r="5" fill="none" stroke="#a78bfa" stroke-width="2"/><line x1="${cx-8}" y1="${cy}" x2="${cx+8}" y2="${cy}" stroke="#a78bfa" stroke-width="3"/>`;
+            return `<circle cx="${cx}" cy="${cy}" r="8" fill="#888"/>`;
           }).join("");
           return `<div style="padding:12px 16px;background:#f0f0f0"><svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" style="border-radius:8px;display:block;margin:0 auto">${bg}${drawingsSVG}${itemsSVG}</svg></div>`;
         })() : `<div style="padding:10px 16px;font-size:12px;color:#999;font-style:italic">Sin pizarra</div>`}
