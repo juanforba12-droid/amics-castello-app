@@ -1317,13 +1317,14 @@ function EntrenamientosSection({ team, data, onSave, isCoord, globalTasks = [] }
           </div>
         )}
         {sessionTasks.length === 0 && <p className="text-zinc-500 text-sm">Sin ejercicios en esta sesión.</p>}
-        {sessionTasks.map(t => {
+        {sessionTasks.map((t, idx) => {
           const cat = TASK_CATEGORIES.find(c => c.id === t.categoria);
           return (
             <Card key={t.id}>
               <div className="flex justify-between items-start">
                 <div>
                   <div className="flex gap-2 flex-wrap mb-1">
+                    <span className="text-zinc-500 font-bold text-sm">#{idx + 1}</span>
                     <span className="text-white font-semibold">{t.nombre}</span>
                     {cat && <Badge color={cat.color}>{cat.label}</Badge>}
                     <Badge color="zinc">⏱ {t.minutos} min</Badge>
