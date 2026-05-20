@@ -198,7 +198,7 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
       return { ...p, reports: [{ id: Date.now(), title: reportTitle, text: reportText, fecha: reportDate }, ...reports] };
     });
     onSave({ ...data, players });
-    setNotesPlayer(players.find(p => p.id === notesPlayer.id));
+    setNotesPlayer(players.find(p => p.id === notesPlayer.id) || notesPlayer);
     setReportTitle(""); setReportText(""); setEditingReport(null);
     setReportDate(new Date().toISOString().split("T")[0]);
   };
@@ -251,7 +251,7 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
     const players = [...(data.players || [])];
     if (editing) {
       const idx = players.findIndex(p => p.id === editing.id);
-      players[idx] = { ...editing, name, dorsal, positions, posicionPrincipal };
+      players[idx] = { ...editing, name, dorsal, positions, posicionPrincipal, reports: editing.reports || [] };
     } else {
       players.push({ id: Date.now(), name, dorsal, positions, posicionPrincipal });
     }
