@@ -533,9 +533,9 @@ function FieldMarkings({ type }) {
       <circle cx="50" cy="27.5" r="9" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
       <circle cx="50" cy="27.5" r="0.5" fill="white" opacity="0.9"/>
       {/* Zona pintada izquierda FIBA: 4.9m ancho x 5.8m largo */}
-      <rect x="1" y="20" width="12" height="13.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
-      <path d="M13 20 A6.43 6.43 0 0 1 13 33.5" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M13 20 A6.43 6.43 0 0 0 13 33.5" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
+      <rect x="1" y="18.7" width="15.6" height="17.6" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
+      <path d="M16.6 18.7 A6.43 6.43 0 0 1 16.6 36.3" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M16.6 18.7 A6.43 6.43 0 0 0 16.6 36.3" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
       {/* Tablero izquierdo */}
       <line x1="1" y1="23.1" x2="1" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
       {/* Poste aro izquierdo */}
@@ -547,11 +547,11 @@ function FieldMarkings({ type }) {
       {/* 3 puntos izquierda: rectas cortas + arco grande */}
       <line x1="1" y1="4.5" x2="5.5" y2="4.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <line x1="1" y1="49" x2="5.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M5.5 4.5 A24.1 24.1 0 0 1 5.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M5.5 4.5 A38.6 38.6 0 0 1 5.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       {/* Zona pintada derecha FIBA */}
-      <rect x="87" y="20" width="12" height="13.5" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
-      <path d="M87 20 A6.43 6.43 0 0 0 87 33.5" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M87 20 A6.43 6.43 0 0 1 87 33.5" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
+      <rect x="83.4" y="18.7" width="15.6" height="17.6" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
+      <path d="M83.4 18.7 A6.43 6.43 0 0 0 83.4 36.3" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M83.4 18.7 A6.43 6.43 0 0 1 83.4 36.3" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
       {/* Tablero derecho */}
       <line x1="99" y1="23.1" x2="99" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
       {/* Poste aro derecho */}
@@ -563,7 +563,7 @@ function FieldMarkings({ type }) {
       {/* 3 puntos derecha */}
       <line x1="99" y1="4.5" x2="94.5" y2="4.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <line x1="99" y1="49" x2="94.5" y2="49" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M94.5 4.5 A24.1 24.1 0 0 0 94.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M94.5 4.5 A38.6 38.6 0 0 0 94.5 49" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
     </svg>
   );
 }
