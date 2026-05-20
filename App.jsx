@@ -1286,8 +1286,36 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
         {session.desc && <Card><p className="text-zinc-300 text-sm">{session.desc}</p></Card>}
         <div className="flex justify-between items-center">
           <p className="text-sm font-semibold text-zinc-300">Ejercicios de la sesión</p>
-          <Btn small onClick={() => setTaskEditor({})}>+ Añadir ejercicio</Btn>
+          <div className="flex gap-2">
+            <Btn small variant="secondary" onClick={() => setShowLibPicker(!showLibPicker)}>📚 Desde biblioteca</Btn>
+            <Btn small onClick={() => { setShowLibPicker(false); setTaskEditor({}); }}>+ Nuevo ejercicio</Btn>
+          </div>
         </div>
+        {showLibPicker && (
+          <div className="bg-zinc-800 border border-zinc-700 rounded-xl p-4 space-y-2">
+            <p className="text-xs text-zinc-400 uppercase tracking-wider mb-2">Selecciona de la biblioteca</p>
+            {(globalTasks || []).length === 0 && <p className="text-zinc-500 text-sm">La biblioteca está vacía.</p>}
+            {(globalTasks || []).map(t => {
+              const cat = TASK_CATEGORIES.find(c => c.id === t.categoria);
+              return (
+                <div key={t.id} className="flex items-center gap-3 bg-zinc-900 rounded-lg px-3 py-2">
+                  <div className="flex-1">
+                    <span className="text-white text-sm font-semibold">{t.nombre}</span>
+                    <span className="text-zinc-500 text-xs ml-2">⏱ {t.minutos} min</span>
+                  </div>
+                  <Btn small onClick={() => {
+                    const newTask = { ...t, id: Date.now() };
+                    const updated = [...sessionTasks, newTask];
+                    const trainings = (data.trainings || []).map(tr => tr.id === session.id ? { ...tr, tasks: updated } : tr);
+                    onSave({ ...data, trainings });
+                    setDetailSession({ ...session, tasks: updated });
+                    setShowLibPicker(false);
+                  }}>➕ Añadir</Btn>
+                </div>
+              );
+            })}
+          </div>
+        )}
         {sessionTasks.length === 0 && <p className="text-zinc-500 text-sm">Sin ejercicios en esta sesión.</p>}
         {sessionTasks.map(t => {
           const cat = TASK_CATEGORIES.find(c => c.id === t.categoria);
