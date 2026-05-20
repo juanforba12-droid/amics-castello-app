@@ -452,10 +452,10 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
                           </div>
                         </div>
                         <div className="flex gap-1 ml-2 shrink-0">
-                          <Btn small variant="ghost" onClick={() => setStatsPlayer(p)}>📊</Btn>
-                          <Btn small variant="ghost" onClick={() => openNotes(p)}>📝</Btn>
-                          <Btn small variant="secondary" onClick={() => open(p)}>✏️</Btn>
-                          <Btn small variant="danger" onClick={() => del(p.id)}>🗑️</Btn>
+                          <Btn small variant="ghost" onClick={() => setStatsPlayer(p)}>📊 Stats</Btn>
+                          <Btn small variant="ghost" onClick={() => openNotes(p)}>📝 Notas</Btn>
+                          <Btn small variant="secondary" onClick={() => open(p)}>✏️ Editar</Btn>
+                          <Btn small variant="danger" onClick={() => del(p.id)}>🗑️ Borrar</Btn>
                         </div>
                       </Card>
                     ))}
