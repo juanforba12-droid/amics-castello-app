@@ -526,37 +526,32 @@ function FieldMarkings({ type }) {
     </svg>
   );
   return (
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 65" preserveAspectRatio="none">
-      {/* Borde cancha */}
-      <rect x="2" y="2" width="96" height="61" fill="none" stroke="white" strokeWidth="0.5" opacity="0.7"/>
-      {/* Línea central */}
-      <line x1="50" y1="2" x2="50" y2="63" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      {/* Círculo central */}
-      <circle cx="50" cy="32.5" r="6" fill="none" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      {/* Zona pintada izquierda */}
-      <rect x="2" y="18" width="19" height="29" fill="none" stroke="white" strokeWidth="0.5" opacity="0.7"/>
-      <line x1="21" y1="22" x2="21" y2="43" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <path d="M21 22 A10 10 0 0 1 21 43" fill="none" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      {/* Tablero izquierdo */}
-      <rect x="0" y="27.5" width="4" height="10" fill="none" stroke="white" strokeWidth="0.8" opacity="0.8"/>
-      {/* Aro izquierdo */}
-      <circle cx="6" cy="32.5" r="2.5" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9"/>
-      {/* 3 puntos izquierda */}
-      <path d="M2 14 A22 22 0 0 1 2 51" fill="none" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <line x1="2" y1="14" x2="9" y2="14" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <line x1="2" y1="51" x2="9" y2="51" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      {/* Zona pintada derecha */}
-      <rect x="79" y="18" width="19" height="29" fill="none" stroke="white" strokeWidth="0.5" opacity="0.7"/>
-      <line x1="79" y1="22" x2="79" y2="43" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <path d="M79 22 A10 10 0 0 0 79 43" fill="none" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      {/* Tablero derecho */}
-      <rect x="96" y="27.5" width="4" height="10" fill="none" stroke="white" strokeWidth="0.8" opacity="0.8"/>
-      {/* Aro derecho */}
-      <circle cx="94" cy="32.5" r="2.5" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9"/>
-      {/* 3 puntos derecha */}
-      <path d="M98 14 A22 22 0 0 0 98 51" fill="none" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <line x1="91" y1="14" x2="98" y2="14" stroke="white" strokeWidth="0.5" opacity="0.6"/>
-      <line x1="91" y1="51" x2="98" y2="51" stroke="white" strokeWidth="0.5" opacity="0.6"/>
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 55" preserveAspectRatio="none">
+      <rect x="0" y="0" width="100" height="55" fill="#b05a14"/>
+      <rect x="1" y="1" width="98" height="53" fill="none" stroke="white" strokeWidth="0.7" opacity="0.95"/>
+      <line x1="50" y1="1" x2="50" y2="54" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <circle cx="50" cy="27.5" r="9" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <circle cx="50" cy="27.5" r="0.5" fill="white" opacity="0.9"/>
+      <rect x="1" y="14" width="19" height="27" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.6" opacity="0.95"/>
+      <path d="M20 14 A13.5 13.5 0 0 1 20 41" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M20 14 A13.5 13.5 0 0 0 20 41" fill="none" stroke="white" strokeWidth="0.6" strokeDasharray="1.5 1.5" opacity="0.7"/>
+      <rect x="0" y="23.5" width="2.5" height="8" fill="none" stroke="white" strokeWidth="0.9" opacity="1"/>
+      <line x1="2.5" y1="27.5" x2="5.5" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.9"/>
+      <circle cx="7.5" cy="27.5" r="2.2" fill="none" stroke="white" strokeWidth="0.7" opacity="1"/>
+      <path d="M7.5 25.3 A2.2 2.2 0 0 1 7.5 29.7" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.8 0.8" opacity="0.8"/>
+      <line x1="1" y1="4.5" x2="10" y2="4.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <line x1="1" y1="50.5" x2="10" y2="50.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M10 4.5 A26 26 0 0 1 10 50.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <rect x="80" y="14" width="19" height="27" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.6" opacity="0.95"/>
+      <path d="M80 14 A13.5 13.5 0 0 0 80 41" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M80 14 A13.5 13.5 0 0 1 80 41" fill="none" stroke="white" strokeWidth="0.6" strokeDasharray="1.5 1.5" opacity="0.7"/>
+      <rect x="97.5" y="23.5" width="2.5" height="8" fill="none" stroke="white" strokeWidth="0.9" opacity="1"/>
+      <line x1="97.5" y1="27.5" x2="94.5" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.9"/>
+      <circle cx="92.5" cy="27.5" r="2.2" fill="none" stroke="white" strokeWidth="0.7" opacity="1"/>
+      <path d="M92.5 25.3 A2.2 2.2 0 0 0 92.5 29.7" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.8 0.8" opacity="0.8"/>
+      <line x1="99" y1="4.5" x2="90" y2="4.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <line x1="99" y1="50.5" x2="90" y2="50.5" stroke="white" strokeWidth="0.6" opacity="0.9"/>
+      <path d="M90 4.5 A26 26 0 0 0 90 50.5" fill="none" stroke="white" strokeWidth="0.6" opacity="0.9"/>
     </svg>
   );
 }
