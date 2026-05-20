@@ -339,8 +339,8 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
           </div>
         </Card>
         <div className="space-y-2">
-          {(notesPlayer.reports || []).length === 0 && <p className="text-zinc-500 text-sm">Sin informes todavía.</p>}
-          {(notesPlayer.reports || []).map(r => (
+          {((data.players||[]).find(p=>p.id===notesPlayer.id)?.reports || []).length === 0 && <p className="text-zinc-500 text-sm">Sin informes todavía.</p>}
+          {((data.players||[]).find(p=>p.id===notesPlayer.id)?.reports || []).map(r => (
             <Card key={r.id}>
               <div className="flex justify-between items-start mb-2">
                 <div>
