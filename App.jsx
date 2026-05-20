@@ -1294,8 +1294,8 @@ function EntrenamientosSection({ team, data, onSave, isCoord, globalTasks }) {
         {showLibPicker && (
           <div className="bg-zinc-800 border border-zinc-700 rounded-xl p-4 space-y-2">
             <p className="text-xs text-zinc-400 uppercase tracking-wider mb-2">Selecciona de la biblioteca</p>
-            {(globalTasks || []).length === 0 && <p className="text-zinc-500 text-sm">La biblioteca está vacía.</p>}
-            {(globalTasks || []).map(t => {
+            {((typeof globalTasks !== "undefined" ? globalTasks : []) || []).length === 0 && <p className="text-zinc-500 text-sm">La biblioteca está vacía.</p>}
+            {((typeof globalTasks !== "undefined" ? globalTasks : []) || []).map(t => {
               const cat = TASK_CATEGORIES.find(c => c.id === t.categoria);
               return (
                 <div key={t.id} className="flex items-center gap-3 bg-zinc-900 rounded-lg px-3 py-2">
