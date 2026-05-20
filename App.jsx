@@ -1133,26 +1133,26 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
             <rect x="10" y="10" width="480" height="280" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
             <line x1="250" y1="10" x2="250" y2="290" stroke="white" stroke-width="1.5" opacity="0.8"/>
             <circle cx="250" cy="150" r="45" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
-            <rect x="10" y="70" width="104" height="160" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M114 70 A64 64 0 0 1 114 230" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
-            <path d="M114 70 A64 64 0 0 0 114 230" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.6"/>
-            <line x1="10" y1="115" x2="10" y2="185" stroke="white" stroke-width="5" opacity="1"/>
-            <line x1="10" y1="150" x2="38" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
-            <circle cx="38" cy="150" r="11" fill="none" stroke="white" stroke-width="2" opacity="1"/>
-            <path d="M38 125 A120 120 0 0 0 38 175" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.7"/>
-            <line x1="10" y1="27" x2="38" y2="27" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <line x1="10" y1="273" x2="38" y2="273" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M38 27 A120 120 0 0 1 38 273" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <rect x="386" y="70" width="104" height="160" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M386 70 A64 64 0 0 0 386 230" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
-            <path d="M386 70 A64 64 0 0 1 386 230" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.6"/>
-            <line x1="490" y1="115" x2="490" y2="185" stroke="white" stroke-width="5" opacity="1"/>
-            <line x1="490" y1="150" x2="462" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
-            <circle cx="462" cy="150" r="11" fill="none" stroke="white" stroke-width="2" opacity="1"/>
-            <path d="M462 125 A120 120 0 0 1 462 175" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.7"/>
-            <line x1="490" y1="27" x2="462" y2="27" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <line x1="490" y1="273" x2="462" y2="273" stroke="white" stroke-width="1.5" opacity="0.9"/>
-            <path d="M462 27 A120 120 0 0 0 462 273" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>`;
+            <rect x="10" y="97" width="78" height="106" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M88 97 A40 40 0 0 1 88 203" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <path d="M88 97 A40 40 0 0 0 88 203" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6"/>
+            <line x1="10" y1="128" x2="10" y2="172" stroke="white" stroke-width="5" opacity="1"/>
+            <line x1="10" y1="150" x2="30" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="30" cy="150" r="8" fill="none" stroke="white" stroke-width="2" opacity="1"/>
+            <path d="M30 135 A15 15 0 0 1 30 165" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+            <line x1="10" y1="40" x2="30" y2="40" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <line x1="10" y1="260" x2="30" y2="260" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M30 40 A121 121 0 0 1 30 260" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <rect x="412" y="97" width="78" height="106" fill="rgba(255,255,255,0.05)" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M412 97 A40 40 0 0 0 412 203" fill="none" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <path d="M412 97 A40 40 0 0 1 412 203" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6"/>
+            <line x1="490" y1="128" x2="490" y2="172" stroke="white" stroke-width="5" opacity="1"/>
+            <line x1="490" y1="150" x2="470" y2="150" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="470" cy="150" r="8" fill="none" stroke="white" stroke-width="2" opacity="1"/>
+            <path d="M470 135 A15 15 0 0 0 470 165" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+            <line x1="490" y1="40" x2="470" y2="40" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <line x1="490" y1="260" x2="470" y2="260" stroke="white" stroke-width="1.5" opacity="0.9"/>
+            <path d="M470 40 A121 121 0 0 0 470 260" fill="none" stroke="white" stroke-width="1.5" opacity="0.9"/>`;
           const PHEX = { red:"#dc2626", yellow:"#eab308", blue:"#2563eb", green:"#16a34a" };
           const drawingsSVG = (task.pizarra||[]).filter(i=>i&&i.type==="drawing"&&Array.isArray(i.path)&&i.path.length>0).map(item=>{
             const pts = item.path.map(p=>`${(p.x/100)*W},${(p.y/100)*H}`).join(" ");
@@ -1169,7 +1169,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
             if(item.type==="aro_amarillo")return `<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#eab308" stroke-width="2.5"/>`;
             if(item.type==="balon")return `<circle cx="${cx}" cy="${cy}" r="9" fill="white" opacity="0.9"/>`;
             if(item.type==="escalera")return `<rect x="${cx-10}" y="${cy-13}" width="20" height="26" fill="none" stroke="#f59e0b" stroke-width="2"/><line x1="${cx-10}" y1="${cy-5}" x2="${cx+10}" y2="${cy-5}" stroke="#f59e0b" stroke-width="1.5"/><line x1="${cx-10}" y1="${cy+3}" x2="${cx+10}" y2="${cy+3}" stroke="#f59e0b" stroke-width="1.5"/>`;
-            if(item.type==="canasta")return `<rect x="${cx-10}" y="${cy-4}" width="12" height="5" fill="none" stroke="white" stroke-width="1.5"/><line x1="${cx+2}" y1="${cy-1.5}" x2="${cx+9}" y2="${cy-1.5}" stroke="white" stroke-width="1.5"/><circle cx="${cx+12}" cy="${cy-1.5}" r="4" fill="none" stroke="white" stroke-width="1.5"/><line x1="${cx+12}" y1="${cy+2.5}" x2="${cx+12}" y2="${cy+10}" stroke="white" stroke-width="1.5"/><line x1="${cx+7}" y1="${cy+10}" x2="${cx+17}" y2="${cy+10}" stroke="white" stroke-width="1.5"/>`;
+            if(item.type==="canasta")return `<rect x="${cx-16}" y="${cy-5}" width="16" height="8" fill="none" stroke="white" stroke-width="1.5"/><line x1="${cx}" y1="${cy-1}" x2="${cx+10}" y2="${cy-1}" stroke="white" stroke-width="1.5"/><circle cx="${cx+15}" cy="${cy-1}" r="7" fill="none" stroke="white" stroke-width="1.8"/><line x1="${cx+15}" y1="${cy+6}" x2="${cx+15}" y2="${cy+16}" stroke="white" stroke-width="1.5"/><line x1="${cx+8}" y1="${cy+16}" x2="${cx+22}" y2="${cy+16}" stroke="white" stroke-width="1.5"/>`;
             if(item.type==="pesa")return `<circle cx="${cx-8}" cy="${cy}" r="5" fill="none" stroke="#a78bfa" stroke-width="2"/><circle cx="${cx+8}" cy="${cy}" r="5" fill="none" stroke="#a78bfa" stroke-width="2"/><line x1="${cx-8}" y1="${cy}" x2="${cx+8}" y2="${cy}" stroke="#a78bfa" stroke-width="3"/>`;
             return `<circle cx="${cx}" cy="${cy}" r="8" fill="#888"/>`;
           }).join("");
@@ -1312,8 +1312,9 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
                 </div>
                 {s.desc && <p className="text-zinc-500 text-sm truncate max-w-xs">{s.desc}</p>}
                 {(s.tasks || []).length > 0 && (() => {
-                  const totalMin = (s.tasks||[]).reduce((a,t)=>a+(t.minutos||0),0);
-                  const pct = s.duracion ? Math.min(100, Math.round((totalMin/s.duracion)*100)) : null;
+                  const sess = (data.trainings||[]).find(x=>x.id===s.id)||s;
+                  const totalMin = (sess.tasks||[]).reduce((a,t)=>a+(t.minutos||0),0);
+                  const pct = sess.duracion ? Math.min(100, Math.round((totalMin/sess.duracion)*100)) : null;
                   const pctColor = pct >= 100 ? "bg-green-500" : pct >= 75 ? "bg-yellow-500" : "bg-blue-500";
                   return (
                     <div className="mt-2 space-y-1">
