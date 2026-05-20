@@ -159,6 +159,7 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
   const [posicionPrincipal, setPosicionPrincipal] = useState("");
   const [statsPlayer, setStatsPlayer] = useState(null);
   const [notesPlayer, setNotesPlayer] = useState(null);
+  const [showAllReports, setShowAllReports] = useState(false);
   const [reportTitle, setReportTitle] = useState("");
   const [reportText, setReportText] = useState("");
   const [reportDate, setReportDate] = useState("");
