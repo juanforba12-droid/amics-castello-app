@@ -1035,7 +1035,7 @@ function TareasSection({ team, data, onSave, globalTasks, onSaveGlobal, isCoord 
 // ══════════════════════════════════════════════════════════════════════════════
 // SECTION: Entrenamientos
 // ══════════════════════════════════════════════════════════════════════════════
-function EntrenamientosSection({ team, data, onSave, isCoord }) {
+function EntrenamientosSection({ team, data, onSave, isCoord, globalTasks }) {
   const [view, setView] = useState("list");
   const [editing, setEditing] = useState(null);
   const [taskEditor, setTaskEditor] = useState(null);
@@ -2690,7 +2690,7 @@ export default function App() {
             {activeSection === "mejoresrivales" && isCoord && <MejoresRivalesSection db={db} />}
             {activeSection === "gestion" && isCoord && <GestionSection db={db} onArchive={archiveSeason} onRestore={restoreSeason} passwords={{ ...TEAM_PASSWORDS, ...teamPasswords }} onSavePasswords={savePasswords} />}
             {activeSection === "plantilla" && <PlantillaSection team={activeTeam} data={teamData} onSave={d => updateTeamData(activeTeam, d)} isCoord={isCoord} seasons={seasons} />}
-            {activeSection === "entrenamientos" && <EntrenamientosSection team={activeTeam} data={teamData} onSave={d => updateTeamData(activeTeam, d)} isCoord={isCoord} />}
+            {activeSection === "entrenamientos" && <EntrenamientosSection team={activeTeam} data={teamData} onSave={d => updateTeamData(activeTeam, d)} isCoord={isCoord} globalTasks={globalTasks} />}
             {activeSection === "tareas" && <TareasSection team={activeTeam} data={teamData} onSave={d => updateTeamData(activeTeam, d)} globalTasks={globalTasks} onSaveGlobal={saveGlobalTasks} isCoord={isCoord} />}
             {activeSection === "partidos" && <PartidosSection team={activeTeam} data={teamData} onSave={d => updateTeamData(activeTeam, d)} isCoord={isCoord} />}
             {activeSection === "clasificacion" && <ClasificacionSection team={activeTeam} data={teamData} />}
