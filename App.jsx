@@ -1129,6 +1129,7 @@ function EntrenamientosSection({ team, data, onSave, isCoord }) {
   const [attSession, setAttSession] = useState(null);
   const [coachAttSession, setCoachAttSession] = useState(null);
   const [detailSession, setDetailSession] = useState(null);
+  const [showLibPicker, setShowLibPicker] = useState(false);
 
   const printTraining = (t) => {
     const totalMin = (t.tasks || []).reduce((s, x) => s + (x.minutos || 0), 0);
