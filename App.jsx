@@ -939,6 +939,7 @@ function TareasSection({ team, data, onSave, globalTasks, onSaveGlobal, isCoord 
   const [editing, setEditing] = useState(null);
   const [showEditor, setShowEditor] = useState(false);
   const [libTab, setLibTab] = useState("equipo");
+  const [viewingTask, setViewingTask] = useState(null);
 
   const openEdit = (t) => { setEditing({ ...t, pizarra: (t.pizarra || []).filter(el => el != null) }); setShowEditor(true); };
   const openNew = () => { setEditing(null); setShowEditor(true); };
@@ -1008,9 +1009,20 @@ function TareasSection({ team, data, onSave, globalTasks, onSaveGlobal, isCoord 
                 </div>
                 <div className="flex gap-1 ml-3 shrink-0">
                   {libTab === "biblioteca" && <Btn small variant="secondary" onClick={() => addFromLibrary(t)}>➕ Añadir</Btn>}
+                  <Btn small variant="ghost" onClick={() => setViewingTask(viewingTask?.id === t.id ? null : t)}>👁</Btn>
                   <Btn small variant="secondary" onClick={() => openEdit(t)}>✏️</Btn>
                   {libTab === "equipo" && <Btn small variant="danger" onClick={() => delTask(t.id)}>🗑️</Btn>}
                 </div>
+                {viewingTask?.id === t.id && (
+                  <div className="mt-3 border-t border-zinc-700 pt-3">
+                    {t.desc && <p className="text-zinc-300 text-sm mb-3 whitespace-pre-wrap">{t.desc}</p>}
+                    {t.pizarra && t.pizarra.length > 0 && (
+                      <div className="pointer-events-none opacity-90">
+                        <Pizarra value={t.pizarra} onChange={() => {}} fieldType={t.fieldType || "full"} />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </Card>
           );
