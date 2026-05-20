@@ -364,8 +364,25 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
     <div className="space-y-4">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold text-white">Plantilla — {team}</h2>
-        <Btn onClick={() => open()}>+ Añadir jugador</Btn>
+        <div className="flex gap-2">
+          <Btn variant="secondary" onClick={() => setShowAllReports(!showAllReports)}>📋 Informes</Btn>
+          <Btn onClick={() => open()}>+ Añadir jugador</Btn>
+        </div>
       </div>
+      {showAllReports && (
+        <Card className="border-zinc-700">
+          <h3 className="text-sm font-bold text-zinc-300 mb-3">📋 Todos los informes</h3>
+          {(data.players || []).every(p => (p.reports || []).length === 0) && <p className="text-zinc-500 text-sm">No hay informes todavía.</p>}
+          {(data.players || []).flatMap(p => (p.reports || []).map(r => ({ ...r, playerName: p.name }))).sort((a,b) => (b.fecha||"").localeCompare(a.fecha||"")).map(r => (
+            <div key={r.id} className="border-b border-zinc-800 py-3 last:border-0">
+              <span className="text-green-400 text-xs font-bold uppercase">{r.playerName}</span>
+              {r.title && <p className="text-white font-semibold text-sm mt-0.5">{r.title}</p>}
+              <p className="text-zinc-400 text-xs">{r.fecha}</p>
+              {r.text && <p className="text-zinc-300 text-sm mt-1 whitespace-pre-wrap">{r.text}</p>}
+            </div>
+          ))}
+        </Card>
+      )}
 
       {showForm && (
         <Card className="border-green-900/50">
