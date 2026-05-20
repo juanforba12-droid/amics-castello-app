@@ -1332,6 +1332,24 @@ function EntrenamientosSection({ team, data, onSave, isCoord, globalTasks = [] }
                   {t.desc && <p className="text-zinc-400 text-sm">{t.desc}</p>}
                 </div>
                 <div className="flex gap-1">
+                  <Btn small variant="ghost" onClick={() => {
+                    const i = sessionTasks.findIndex(x => x.id === t.id);
+                    if (i === 0) return;
+                    const updated = [...sessionTasks];
+                    [updated[i-1], updated[i]] = [updated[i], updated[i-1]];
+                    const trainings = (data.trainings||[]).map(tr => tr.id === session.id ? {...tr, tasks: updated} : tr);
+                    onSave({...data, trainings});
+                    setDetailSession({...session, tasks: updated});
+                  }}>↑</Btn>
+                  <Btn small variant="ghost" onClick={() => {
+                    const i = sessionTasks.findIndex(x => x.id === t.id);
+                    if (i === sessionTasks.length - 1) return;
+                    const updated = [...sessionTasks];
+                    [updated[i+1], updated[i]] = [updated[i], updated[i+1]];
+                    const trainings = (data.trainings||[]).map(tr => tr.id === session.id ? {...tr, tasks: updated} : tr);
+                    onSave({...data, trainings});
+                    setDetailSession({...session, tasks: updated});
+                  }}>↓</Btn>
                   <Btn small variant="secondary" onClick={() => setTaskEditor(t)}>✏️</Btn>
                   <Btn small variant="danger" onClick={() => {
                     const updated = sessionTasks.filter(x => x.id !== t.id);
