@@ -537,33 +537,33 @@ function FieldMarkings({ type }) {
       <path d="M16.6 18.7 A6.43 6.43 0 0 1 16.6 36.3" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <path d="M16.6 18.7 A6.43 6.43 0 0 0 16.6 36.3" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
       {/* Tablero izquierdo */}
-      <line x1="1" y1="23.1" x2="1" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
+      <line x1="1" y1="24" x2="1" y2="31" stroke="white" strokeWidth="2.5" opacity="1"/>
       {/* Poste aro izquierdo */}
-      <line x1="1" y1="26.75" x2="5.6" y2="26.75" stroke="white" strokeWidth="0.5" opacity="0.8"/>
+      <line x1="1" y1="27.5" x2="5.6" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.8"/>
       {/* Aro izquierdo */}
-      <circle cx="5.6" cy="26.75" r="1.6" fill="none" stroke="white" strokeWidth="0.75" opacity="1"/>
+      <circle cx="5.6" cy="27.5" r="1.6" fill="none" stroke="white" strokeWidth="0.75" opacity="1"/>
       {/* Arco sin carga 1.25m punteado */}
-      <path d="M5.6 25.3 A1.6 1.6 0 0 1 5.6 28.2" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
+      <path d="M5.6 26 A1.6 1.6 0 0 1 5.6 29" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
       {/* 3 puntos izquierda: rectas cortas + arco grande */}
       <line x1="1" y1="5.5" x2="5.6" y2="5.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <line x1="1" y1="48" x2="5.6" y2="48" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M5.6 5.5 A13.4 13.4 0 0 1 5.6 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M5.6 5.5 A12 12 0 0 1 5.6 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       {/* Zona pintada derecha FIBA */}
       <rect x="83.4" y="18.7" width="15.6" height="17.6" fill="rgba(255,255,255,0.07)" stroke="white" strokeWidth="0.65" opacity="0.95"/>
       <path d="M83.4 18.7 A6.43 6.43 0 0 0 83.4 36.3" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <path d="M83.4 18.7 A6.43 6.43 0 0 1 83.4 36.3" fill="none" stroke="white" strokeWidth="0.55" strokeDasharray="1 1" opacity="0.65"/>
       {/* Tablero derecho */}
-      <line x1="99" y1="23.1" x2="99" y2="30.5" stroke="white" strokeWidth="2.5" opacity="1"/>
+      <line x1="99" y1="24" x2="99" y2="31" stroke="white" strokeWidth="2.5" opacity="1"/>
       {/* Poste aro derecho */}
-      <line x1="99" y1="26.75" x2="94.4" y2="26.75" stroke="white" strokeWidth="0.5" opacity="0.8"/>
+      <line x1="99" y1="27.5" x2="94.4" y2="27.5" stroke="white" strokeWidth="0.5" opacity="0.8"/>
       {/* Aro derecho */}
-      <circle cx="94.4" cy="26.75" r="1.6" fill="none" stroke="white" strokeWidth="0.75" opacity="1"/>
+      <circle cx="94.4" cy="27.5" r="1.6" fill="none" stroke="white" strokeWidth="0.75" opacity="1"/>
       {/* Arco sin carga derecho punteado */}
-      <path d="M94.4 25.3 A1.6 1.6 0 0 0 94.4 28.2" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
+      <path d="M94.4 26 A1.6 1.6 0 0 0 94.4 29" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="0.5 0.5" opacity="0.85"/>
       {/* 3 puntos derecha */}
       <line x1="99" y1="5.5" x2="94.4" y2="5.5" stroke="white" strokeWidth="0.65" opacity="0.9"/>
       <line x1="99" y1="48" x2="94.4" y2="48" stroke="white" strokeWidth="0.65" opacity="0.9"/>
-      <path d="M94.4 5.5 A13.4 13.4 0 0 0 94.4 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
+      <path d="M94.4 5.5 A12 12 0 0 0 94.4 48" fill="none" stroke="white" strokeWidth="0.65" opacity="0.9"/>
     </svg>
   );
 }
