@@ -465,7 +465,7 @@ function PlantillaSection({ team, data, onSave, isCoord, seasons }) {
               if (grupo.length === 0) return null;
               return (
                 <div key={pos} className="space-y-2">
-                  <p className={`text-xs uppercase tracking-wider font-bold ${posColor[pos] || "text-zinc-400"}`}>{pos} ({grupo.length})</p>
+                  <p className={`text-xs uppercase tracking-wider font-bold ${posColor[pos] || "text-zinc-400"}`}>{pos.replace(/ \(\d\)/, "")} ({grupo.length})</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {grupo.map(p => (
                       <Card key={p.id} className={`flex justify-between items-start border ${statusStyle(p.status || "disponible")}`}>
